@@ -38,7 +38,7 @@ struct SymbolEffectiOS17: View {
                 // Value 값이 변하면 Animation 시작
                 Image(systemName: "lightbulb.max.fill")
                     .foregroundStyle(.mint)
-                    .symbolEffect(.bounce, options: .repeating.repeat(2), value: startAnimation)
+                    .symbolEffect(.bounce, options: SymbolEffectOptions.repeat(2), value: startAnimation)
             }
             
             Button("Start Button") {
