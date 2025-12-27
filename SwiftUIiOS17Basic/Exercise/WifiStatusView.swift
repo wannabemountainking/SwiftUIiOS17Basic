@@ -7,26 +7,13 @@
 
 import SwiftUI
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/main
 enum WifiStatus: Identifiable, CaseIterable {
     case connected
     case connecting
     case disconnected
     
-<<<<<<< HEAD
-    var id: String {
-        switch self {
-        case .connected: return "connected"
-        case .connecting: return "connecting"
-        case .disconnected: return "disconnected"
-        }
-    }
-=======
     var id: Self {self}
->>>>>>> origin/main
     
     var title: String {
         switch self {
@@ -51,14 +38,6 @@ enum WifiStatus: Identifiable, CaseIterable {
         case .disconnected: return .gray
         }
     }
-<<<<<<< HEAD
-    
-    var symbolEffect: (any SymbolEffect)? {
-        switch self {
-        case .connected: return .variableColor
-        case .connecting: return .pulse
-        case .disconnected: return nil
-=======
 }
 
 struct WifiSymbolModifier: ViewModifier {
@@ -74,20 +53,15 @@ struct WifiSymbolModifier: ViewModifier {
                 .symbolEffect(.pulse)
         case .disconnected:
             content
->>>>>>> origin/main
         }
     }
 }
 
-<<<<<<< HEAD
-=======
 extension View {
     func wifiSymbolEffect(status: WifiStatus) -> some View {
         modifier(WifiSymbolModifier(status: status))
     }
 }
-
->>>>>>> origin/main
 
 struct WifiStatusView: View {
     @State private var currentWifiStatus: WifiStatus = .disconnected
@@ -95,37 +69,6 @@ struct WifiStatusView: View {
     
     var body: some View {
         VStack(spacing: 30) {
-<<<<<<< HEAD
-            // 현재 선택된 뷰
-            Image(systemName: currentWifiStatus.icon)
-                .foregroundStyle(currentWifiStatus.iconColor)
-                .modifier(SymbolEffect)
-            
-            // 전체 뷰 리스트
-        }
-        
-        
-        List {
-            HStack(spacing: 20) {
-                Image(systemName: "wifi")
-                    .foregroundStyle(.mint)
-                    .symbolEffect(.variableColor)
-                Text("연결됨")
-            }
-            HStack(spacing: 20) {
-                Image(systemName: "wifi")
-                    .foregroundStyle(.blue)
-                    .symbolEffect(.pulse)
-                Text("연결 중...")
-            }
-            HStack(spacing: 20) {
-                Image(systemName: "wifi.slash")
-                    .foregroundStyle(.gray)
-                Text("연결 끊김")
-            }
-        }
-    }
-=======
             Spacer()
             // 현재 선택된 뷰
             VStack(spacing: 20) {
@@ -164,7 +107,6 @@ struct WifiStatusView: View {
             }//: List
         }//: VStack
     }//: body
->>>>>>> origin/main
 }
 
 #Preview {
